@@ -9,7 +9,7 @@ function PokeList() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=40");
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon?16&offset=900");
       const { results } = await response.json();
       const detailResponse = await Promise.all(
         results.map(async ({ url }: { url: string }) => await fetch(url))

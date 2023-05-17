@@ -10,6 +10,9 @@ function App() {
       <h1 className="text-center">POKEMON API</h1>
 
       <PokeAPI />
+      <hr />
+      <PokeList />
+      
     </div>
   );
 }

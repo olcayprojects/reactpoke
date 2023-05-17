@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactpoke/static/css/main.f624b26e.css",
+    "main.js": "/reactpoke/static/js/main.47c112d6.js",
+    "index.html": "/reactpoke/index.html",
+    "main.f624b26e.css.map": "/reactpoke/static/css/main.f624b26e.css.map",
+    "main.47c112d6.js.map": "/reactpoke/static/js/main.47c112d6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f624b26e.css",
+    "static/js/main.47c112d6.js"
+  ]
+}

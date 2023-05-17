@@ -23,7 +23,7 @@ function PokeList() {
   }, []);
 
   return (
-    <div className="row">
+    <div className="row justify-content-md-center">
       {data?.map((item, index) => {
         return (
           <div className="col-sm-4 p-1 mb-1 border border-primary" key={index}>

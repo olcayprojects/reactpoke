@@ -25,15 +25,16 @@ body {
   }
 }
 
-
 .blink {
-            animation: blinker 0.2s linear infinite;
-            color:cyan;
-            
-        }
+  animation: blinker .05s linear infinite;
+  color: cyan;
+}
 
 @keyframes blinker {
-            100% {
-                opacity: 0.8;
-                
-            }        }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: .1;
+  }
+}

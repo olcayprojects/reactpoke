@@ -30,7 +30,7 @@ function PokeList(props) {
           <div className="col-6 col-md-4 p-0 mb-2" key={index}>
             <div className="card bg-dark text-light h-100 mx-1">
               <img
-                className="card-img-top bg-black border border-info border-5  blink"
+                className="card-img-top bg-black blink"
                 src={item.sprites.other["official-artwork"].front_shiny}
                 alt=""
               />

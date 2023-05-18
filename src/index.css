@@ -24,3 +24,16 @@ body {
     transform: rotate(360deg);
   }
 }
+
+
+.blink {
+            animation: blinker 0.2s linear infinite;
+            color:cyan;
+            
+        }
+
+@keyframes blinker {
+            100% {
+                opacity: 0.8;
+                
+            }        }

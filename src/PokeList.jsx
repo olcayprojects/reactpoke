@@ -30,31 +30,31 @@ function PokeList(props) {
           <div className="col-6 col-md-4 p-0 mb-2" key={index}>
             <div className="card bg-dark text-light h-100 mx-1">
               <img
-                className="card-img-top bg-black border border-info border-1"
+                className="card-img-top bg-black border border-info border-5"
                 src={item.sprites.other["official-artwork"].front_shiny}
                 alt=""
               />
               <div className="card-body m-0 bg-dark">
-                <h5 className="card-title text-center">{item.id}</h5>
-                <h5 className="card-title text-center">
+                <h5 className="card-title text-center">#{item.id}</h5>
+                <h4 className="card-title text-center">
                   {String(item.name).toUpperCase()}
-                </h5>
-                <p className="card-text">
+                </h4>
+                <h6 className="card-text">
                   Height: {Number.parseFloat(item.height) / 10}m
-                </p>
-                <p className="card-text">
+                </h6>
+                <h6 className="card-text">
                   Weight: {Number.parseFloat(item.weight) / 10}kg
-                </p>
+                </h6>
                 <p className="card-text ">
                   Abilities:{" "}
-                  {item.abilities.map((items) => {
-                    return <li>{items.ability.name}</li>;
+                  {item.abilities.map((items, index) => {
+                    return <li key={index}>{items.ability.name}</li>;
                   })}
                 </p>
                 <p>
                   Type:{" "}
                   {item.types.map((type, index) => {
-                    return <li>{type.type.name}</li>;
+                    return <li key={index}>{type.type.name}</li>;
                   })}
                 </p>
                 <hr />
@@ -63,19 +63,21 @@ function PokeList(props) {
                   return (
                     <div key={i}>
                       <table>
-                        <tr>
-                          <td style={{ width: "130px", textAlign: "end" }}>
-                            {String(stat.stat.name).toUpperCase()}
-                          </td>
-                          <td style={{ width: "68%" }}>
-                            <ProgressBar
-                              now={stat.base_stat}
-                              label={stat.base_stat}
-                              className="progress-bar bg-success progress-bar-animated"
-                              animated
-                            />{" "}
-                          </td>
-                        </tr>
+                        <tbody>
+                          <tr>
+                            <td style={{ width: "130px", textAlign: "end" }}>
+                              {String(stat.stat.name).toUpperCase()}
+                            </td>
+                            <td style={{ width: "68%" }}>
+                              <ProgressBar
+                                now={stat.base_stat}
+                                label={stat.base_stat}
+                                className="progress-bar bg-success progress-bar-animated"
+                                animated
+                              />{" "}
+                            </td>
+                          </tr>
+                        </tbody>
                       </table>
                     </div>
                   );

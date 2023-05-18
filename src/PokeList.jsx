@@ -3,13 +3,13 @@ import axios from "axios";
 import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function PokeList() {
+function PokeList(props) {
   const [data, setData] = useState();
   const [ability, setAbility] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?16&offset=900");
+      const response = await fetch("https://pokeapi.co/api/v2/pokemon?10&offset="+props.data);
       const { results } = await response.json();
       const detailResponse = await Promise.all(
         results.map(async ({ url }: { url: string }) => await fetch(url))

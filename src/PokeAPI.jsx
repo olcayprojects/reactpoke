@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function PokeAPI() {
+export default function PokeAPI(props) {
   const [Data, setData] = useState();
 
   useEffect(() => {
     async function getData() {
-      let res = await axios.get(
-        `https://pokeapi.co/api/v2/pokemon?limit=16&offset=900`
-      );
+      let res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=10&offset="+props.data);
+      
       // console.log(res);
       setData(res.data.results);
     }

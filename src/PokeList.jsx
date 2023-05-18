@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -9,7 +8,7 @@ function PokeList(props) {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?10&offset=" + props.data
+        "https://pokeapi.co/api/v2/pokemon?20&offset=" + props.data
       );
       const { results } = await response.json();
       const detailResponse = await Promise.all(

@@ -6,7 +6,7 @@ export default function PokeAPI(props) {
 
   useEffect(() => {
     async function getData() {
-      let res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=10&offset="+props.data);
+      let res = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=20&offset="+props.data);
       
       // console.log(res);
       setData(res.data.results);

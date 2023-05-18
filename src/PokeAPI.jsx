@@ -16,7 +16,7 @@ export default function PokeAPI(props) {
   }, []);
 
   return (
-    <div className="row cols-4 row-cols-md-6 g-1 justify-content-md-center">
+    <div className="row row-cols-5 row-cols-md-6 g-1 justify-content-md-center">
       {Data?.map((item, index) => {
         // console.log(item);
         return (
@@ -29,7 +29,7 @@ export default function PokeAPI(props) {
                 }.png`}
                 alt=""
               />
-              <div className="card-img px-0">
+              <div className="card-body">
                 <p className="card-title text-center">
                   #{String(item.url).split("/")[6]}
                 </p>

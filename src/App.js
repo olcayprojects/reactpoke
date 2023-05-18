@@ -9,22 +9,21 @@ import PokeList from "./PokeList";
 function randomNumberInRange(min, max) {
   // 👇️ get number between min (inclusive) and max (inclusive)
   return Math.floor(Math.random() * (max - min + 1)) + min;
-
 }
 
 function App() {
-  let setNum = "";
-
-  setNum=randomNumberInRange(1,1000);
+  let setNum = randomNumberInRange(1, 1000);
   return (
     <div className="container-fluid bg-black text-light">
-      <h1 className="text-center">POKEMON API</h1>
-    
+      <img
+        className="img-fluid rounded mx-auto d-block"
+        src={require("./POKEMON.png")}
+        alt=""
+      />
 
       <PokeAPI data={setNum} />
       <hr />
       <PokeList data={setNum} />
-      
     </div>
   );
 }

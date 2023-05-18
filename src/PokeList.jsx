@@ -5,11 +5,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 function PokeList(props) {
   const [data, setData] = useState();
-  const [ability, setAbility] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("https://pokeapi.co/api/v2/pokemon?10&offset="+props.data);
+      const response = await fetch(
+        "https://pokeapi.co/api/v2/pokemon?10&offset=" + props.data
+      );
       const { results } = await response.json();
       const detailResponse = await Promise.all(
         results.map(async ({ url }: { url: string }) => await fetch(url))
@@ -26,22 +27,24 @@ function PokeList(props) {
     <div className="row justify-content-md-center">
       {data?.map((item, index) => {
         return (
-          <div className="col-sm-4 p-1 mb-1 border border-primary" key={index}>
-            <div className="card bg-dark text-light mb-1 h-100">
+          <div className="col-6 col-md-4 p-0 mb-2" key={index}>
+            <div className="card bg-dark text-light h-100 mx-1">
               <img
-                className="card-img-top "
+                className="card-img-top bg-black border border-info border-1"
                 src={item.sprites.other["official-artwork"].front_shiny}
                 alt=""
               />
-              <div className="card-body p-1">
-                <h5 className="card-title text-center">
-                  {item.id}
-                </h5>
+              <div className="card-body m-0 bg-dark">
+                <h5 className="card-title text-center">{item.id}</h5>
                 <h5 className="card-title text-center">
                   {String(item.name).toUpperCase()}
                 </h5>
-                <p className="card-text">Height: {Number.parseFloat(item.height)/10 }m</p>
-                <p className="card-text">Weight: {Number.parseFloat(item.weight)/10}kg</p>
+                <p className="card-text">
+                  Height: {Number.parseFloat(item.height) / 10}m
+                </p>
+                <p className="card-text">
+                  Weight: {Number.parseFloat(item.weight) / 10}kg
+                </p>
                 <p className="card-text ">
                   Abilities:{" "}
                   {item.abilities.map((items) => {
@@ -66,7 +69,6 @@ function PokeList(props) {
                           </td>
                           <td style={{ width: "68%" }}>
                             <ProgressBar
-                            
                               now={stat.base_stat}
                               label={stat.base_stat}
                               className="progress-bar bg-success progress-bar-animated"
@@ -78,7 +80,7 @@ function PokeList(props) {
                     </div>
                   );
                 })}
-                  <hr />
+                <hr />
                 <p>base_experience: {item.base_experience}</p>
                 <p>location_area_encounters: {item.location_area_encounters}</p>
                 <hr />

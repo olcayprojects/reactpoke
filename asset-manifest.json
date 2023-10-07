@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/reactpoke/static/css/main.25b3cfe0.css",
-    "main.js": "/reactpoke/static/js/main.f040f472.js",
+    "main.css": "/reactpoke/static/css/main.ad49763b.css",
+    "main.js": "/reactpoke/static/js/main.679ec1f2.js",
     "static/media/POKEMON.png": "/reactpoke/static/media/POKEMON.7a132418660b94b0d7e4.png",
     "index.html": "/reactpoke/index.html",
-    "main.25b3cfe0.css.map": "/reactpoke/static/css/main.25b3cfe0.css.map",
-    "main.f040f472.js.map": "/reactpoke/static/js/main.f040f472.js.map"
+    "main.ad49763b.css.map": "/reactpoke/static/css/main.ad49763b.css.map",
+    "main.679ec1f2.js.map": "/reactpoke/static/js/main.679ec1f2.js.map"
   },
   "entrypoints": [
-    "static/css/main.25b3cfe0.css",
-    "static/js/main.f040f472.js"
+    "static/css/main.ad49763b.css",
+    "static/js/main.679ec1f2.js"
   ]
 }

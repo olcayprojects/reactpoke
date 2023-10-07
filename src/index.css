@@ -25,7 +25,7 @@ body {
   }
 }
 
-.blink {
+.blink2 {
   animation: blinker .05s linear infinite;
   color: cyan;
 }

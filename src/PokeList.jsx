@@ -36,62 +36,116 @@ function PokeList(props) {
               <div className="card-body m-0 bg-dark">
                 <h5 className="card-title text-center">#{item.id}</h5>
                 <h4 className="card-title text-center">
-                  {String(item.name).toUpperCase()}
+                  <span className="bg-black p-1 text-info fw-bold">
+                    {String(item.name).toUpperCase()}
+                  </span>
                 </h4>
-                <h6 className="card-text">
+                <h5 className="card-text">
                   Height: {Number.parseFloat(item.height) / 10}m
-                </h6>
-                <h6 className="card-text">
+                </h5>
+                <h5 className="card-text">
                   Weight: {Number.parseFloat(item.weight) / 10}kg
-                </h6>
-                <p className="card-text ">
-                  Abilities:{" "}
+                </h5>
+                <p className="card-text">
+                  <span className="fw-bold fs-5">Abilities:</span>
                   {item.abilities.map((items, index) => {
-                    return <li key={index}>{items.ability.name}</li>;
+                    return (
+                      <li key={index}>
+                        {items.ability.name} {items.slot}
+                      </li>
+                    );
                   })}
                 </p>
+                <h6>
+                  <span className="fw-bold">Forms: </span>
+                  {item.forms[0].name}
+                </h6>
+                <h6>
+                  <span className="fw-bold">Species: </span>
+                  {item.species.name}
+                </h6>
                 <p>
-                  Type:{" "}
+                  <span className="fw-bold">Type: </span>
                   {item.types.map((type, index) => {
-                    return <li key={index}>{type.type.name}</li>;
+                    return <span key={index}>{type.type.name} </span>;
                   })}
                 </p>
                 <hr />
-
-                {item.stats.map((stat, i) => {
-                  return (
-                    <div key={i}>
-                      <table>
-                        <tbody>
-                          <tr>
-                            <td style={{ width: "130px", textAlign: "end" }}>
-                              {String(stat.stat.name).toUpperCase()}
-                            </td>
-                            <td style={{ width: "68%" }}>
-                              <ProgressBar
-                                now={stat.base_stat}
-                                label={stat.base_stat}
-                                className="progress-bar bg-success progress-bar-animated"
-                                animated
-                              />{" "}
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                  );
-                })}
+                <table className="table table-dark table-striped">
+                  <tbody>
+                    {item.stats.map((stat, i) => {
+                      return (
+                        <tr key={i}>
+                          <td className="text-end align-middle" style={{}}>
+                            {String(stat.stat.name).toUpperCase()}
+                          </td>
+                          <td className="px-1 w-75">
+                            <ProgressBar
+                              now={stat.base_stat}
+                              label={stat.base_stat}
+                              className="progress-bar bg-success progress-bar-animated"
+                              animated
+                            />{" "}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                    <tr>
+                      <td>BASE EXPERIENCE</td>
+                      <td>
+                        <ProgressBar
+                          now={item.base_experience}
+                          label={item.base_experience}
+                          className="progress-bar bg-success progress-bar-animated"
+                          animated
+                        />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
                 <hr />
-                <p>base_experience: {item.base_experience}</p>
-                <p>location_area_encounters: {item.location_area_encounters}</p>
+                {/* <p>Location area encounters: {item.location_area_encounters}</p> */}
                 <hr />
 
-                <pre>
-                  <b>moves:</b>{" "}
-                  {item.moves.map((move, index) => {
-                    return move.move.name;
-                  })}
-                </pre>
+                <span>
+                  <h5 className="text-center">Moves</h5>
+                  <table className="table table-dark table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Name</th>
+                        <th>Level Learned at</th>
+                        <th>Move Learn Method</th>
+                        <th>Version Group</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {item.moves.map((move, index) => {
+                        return (
+                          <>
+                            <tr>
+                              <td>{move.move.name}</td>
+                              <td>
+                                {move.version_group_details[0].level_learned_at}
+                              </td>
+                              <td>
+                                {
+                                  move.version_group_details[0]
+                                    .move_learn_method.name
+                                }
+                              </td>
+                              <td>
+                                {
+                                  move.version_group_details[0].version_group
+                                    .name
+                                }
+                              </td>
+                            </tr>
+                          </>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </span>
               </div>
             </div>
           </div>

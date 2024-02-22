@@ -8,6 +8,10 @@ body {
 .progress-bar {
   height: 30px;
   font-size: larger;
+  color:hotpink;
+  font-weight: bolder;
+  font-family: cursive;
+  font-style: italic;  
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,4 +41,11 @@ body {
   100% {
     opacity: .1;
   }
+}
+
+.visible {
+  visibility: visible;
+}
+.invisible {
+  visibility: hidden;
 }

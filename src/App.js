@@ -21,8 +21,8 @@ function App() {
         alt=""
       />
 
-      <PokeAPI data={setNum} />
-      <hr />
+      {/* <PokeAPI data={setNum} />
+      <hr /> */}
       <PokeList data={setNum} />
     </div>
   );

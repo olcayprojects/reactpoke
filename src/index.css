@@ -8,10 +8,10 @@ body {
 .progress-bar {
   height: 30px;
   font-size: larger;
-  color:hotpink;
+  color: hotpink;
   font-weight: bolder;
   font-family: cursive;
-  font-style: italic;  
+  font-style: italic;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,7 +30,7 @@ body {
 }
 
 .blink2 {
-  animation: blinker .05s linear infinite;
+  animation: blinker 0.05s linear infinite;
   color: cyan;
 }
 
@@ -39,7 +39,7 @@ body {
     opacity: 1;
   }
   100% {
-    opacity: .1;
+    opacity: 0.1;
   }
 }
 
